@@ -6,7 +6,7 @@ public class FigureSupplier {
     static final int NUMBER_OF_FIGURES = 5;
     static final int NUMBER_OF_PARAM = 100;
     private ColorSupplier colorSupplier = new ColorSupplier();
-    private String whiteColorLowerCase = Color.WHITE.toString().toLowerCase();
+    private String whiteColorLowerCase = Color.WHITE.name().toLowerCase();
 
     public Figure getRandomFigure() {
         Random random = new Random();

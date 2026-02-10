@@ -1,22 +1,27 @@
 package core.basesyntax;
 
 public class Square extends Figure {
-    private double side;
+    private final double side;
+    private final String color;
 
     public Square(String color, double side) {
-        super(color);
-        this.side = side;
+        this.color = color;
         this.side = side;
     }
 
     @Override
-    double getArea() {
+    public double getArea() {
         return side * side;
+    }
+
+    @Override
+    public String getColor() {
+        return color;
     }
 
     @Override
     public void draw() {
         System.out.println("Figure: square," + " area: " + getArea() + " sq. units,"
-                + " side: " + side + "units, " + "color:" + getColor());
+                + " side: " + side + " units, " + "color: " + getColor());
     }
 }
