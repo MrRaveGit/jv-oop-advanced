@@ -5,14 +5,17 @@ import java.util.Random;
 public class FigureSupplier {
     static final int NUMBER_OF_FIGURES = 5;
     static final int NUMBER_OF_PARAM = 100;
-    private ColorSupplier colorSupplier = new ColorSupplier();
-    private String whiteColorLowerCase = Color.WHITE.name().toLowerCase();
+    static final int DEFAULT_CIRCLE_RADIUS = 10;
+    static final int ADDITION_RANDOM = 1;
+    static final int ADDITION_RANDOM_BIG = 10;
+    private final ColorSupplier colorSupplier = new ColorSupplier();
+    private final String whiteColorLowerCase = Color.WHITE.name().toLowerCase();
 
     public Figure getRandomFigure() {
         Random random = new Random();
         int randomFigureIndex = random.nextInt(NUMBER_OF_FIGURES);
-        int randomFigureParam = random.nextInt(NUMBER_OF_PARAM) + 1;
-        int randomFigureParamB = random.nextInt(NUMBER_OF_PARAM) + 10;
+        int randomFigureParam = random.nextInt(NUMBER_OF_PARAM) + ADDITION_RANDOM;
+        int randomFigureParamB = random.nextInt(NUMBER_OF_PARAM) + ADDITION_RANDOM_BIG;
 
         switch (randomFigureIndex) {
             case 0:
@@ -40,7 +43,7 @@ public class FigureSupplier {
     }
 
     public Figure getDefaultFigure() {
-        Figure defaultFigure = new Circle(whiteColorLowerCase, 10);
+        Figure defaultFigure = new Circle(whiteColorLowerCase, DEFAULT_CIRCLE_RADIUS);
         return defaultFigure;
     }
 }
